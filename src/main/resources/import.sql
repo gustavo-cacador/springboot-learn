@@ -17,3 +17,7 @@ INSERT INTO tb_course (name, img_uri, img_gray_uri) VALUES ('Java Spring Referen
 
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z', TIMESTAMP WITH TIME ZONE '2021-07-14T10:00:00Z', 1);
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('2.0', TIMESTAMP WITH TIME ZONE '2021-07-14T10:00:00Z', TIMESTAMP WITH TIME ZONE '2022-07-14T10:00:00Z', 1);
+
+INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Trilha Java', 'Trilha principal do curso', 1,'https://museudoporto.pt/wp-content/uploads/2024/11/Geopolitica.png',  1, 1);
+INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Forum', 'Tire suas dúvidas', 2,'https://museudoporto.pt/wp-content/uploads/2024/11/Geopolitica.png',  2, 1);
+INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para a turma', 3,'https://museudoporto.pt/wp-content/uploads/2024/11/Geopolitica.png',  0, 1);
