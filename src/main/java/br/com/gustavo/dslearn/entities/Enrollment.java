@@ -4,6 +4,8 @@ import br.com.gustavo.dslearn.entities.pk.EnrollmentPK;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_enrollment")
@@ -21,6 +23,9 @@ public class Enrollment {
     // colocando boolean como tipo primitivo pois só queremos valor true ou false, se quisessemos true false ou null colocariamos como wrapper
     private boolean available;
     private boolean onlyUpdate;
+
+    @ManyToMany(mappedBy = "enrollmentsDone")
+    private Set<Lesson> lessonsDone = new HashSet<>();
 
     public Enrollment() {
     }
