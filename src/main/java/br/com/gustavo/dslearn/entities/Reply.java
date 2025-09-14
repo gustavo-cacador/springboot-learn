@@ -3,9 +3,7 @@ package br.com.gustavo.dslearn.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_reply")
@@ -35,6 +33,9 @@ public class Reply {
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
     private Set<User> likes = new HashSet<>();
+
+    @OneToMany(mappedBy = "answer")
+    private List<Topic> topics = new ArrayList<>();
 
     public Reply() {
     }
@@ -89,6 +90,10 @@ public class Reply {
 
     public Set<User> getLikes() {
         return likes;
+    }
+
+    public List<Topic> getTopics() {
+        return topics;
     }
 
     @Override
